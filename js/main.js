@@ -74,7 +74,7 @@
 		
 	var yourImg = document.getElementById('hsImageLogo');
 	if(yourImg && yourImg.style) {
-		var aspectRatio = yourImg.style.width / yourImg.style.height;
+		var aspectRatio = (yourImg.style.width / yourImg.style.height) * 0.8;
 		yourImg.style.width = window.screen.width * window.devicePixelRatio + 'px';
 		yourImg.style.height = yourImg.style.width * aspectRatio * 'px'
 	}
