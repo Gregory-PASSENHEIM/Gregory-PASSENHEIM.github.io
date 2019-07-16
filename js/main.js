@@ -23,6 +23,7 @@
     $('.validate-form .input100').each(function(){
         $(this).focus(function(){
            hideValidate(this);
+           alertToCheck(this);
         });
     });
 
@@ -51,7 +52,9 @@
         $(thisAlert).removeClass('alert-validate');
     }
 
-    
+    function alertToCheck(input) {
+        alert('Test Greg');
+    }
     
    /*==================================================================
     [ Simple slide100 ]*/
