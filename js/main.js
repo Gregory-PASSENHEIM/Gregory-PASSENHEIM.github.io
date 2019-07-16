@@ -72,12 +72,12 @@
             if(nowSlide >= itemSlide.length) {nowSlide = 0;}
         },delay);
 		
-		//alert("Your screen resolution is: " + window.screen.width * window.devicePixelRatio + "x" + window.screen.height * window.devicePixelRatio);
-		var yourImg = document.getElementById('hsImageLogo');
-		if(yourImg && yourImg.style) {
-			yourImg.style.height = window.screen.height * window.devicePixelRatio + 'px';
-			yourImg.style.width = window.screen.width * window.devicePixelRatio + 'px';
-		}
+	var yourImg = document.getElementById('hsImageLogo');
+	if(yourImg && yourImg.style) {
+		var aspectRatio = yourImg.style.width / yourImg.style.height;
+		yourImg.style.width = window.screen.width * window.devicePixelRatio + 'px';
+		yourImg.style.height = yourImg.style.width * aspectRatio * 'px'
+	}
     });
 
 
