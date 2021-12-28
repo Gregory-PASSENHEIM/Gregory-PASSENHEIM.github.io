@@ -305,12 +305,17 @@ jQuery(document).ready(function($) {
   };
   OnePageNavigation();
 
+  let sectionAlreadyAppear = false; 
+  let mysectionPosition = $("#portfolio-section").offset()
+  let viewportHeight = $(window).height();	
+	
   var siteScroll = function() {
-
-  	
-
   	$(window).scroll(function() {
-
+		if ($(this).scrollTop()>mysectionPosition.top - viewportHeight && !sectionAlreadyAppear) {
+			sectionAlreadyAppear = true;
+			siteIstotope();
+		}
+		
   		var st = $(this).scrollTop();
 
   		if (st > 100) {
